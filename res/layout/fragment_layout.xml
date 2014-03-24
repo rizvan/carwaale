@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/markerbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/mappin"
+        android:gravity="center" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_list_selector"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#f8f9fe"
+        android:orientation="horizontal"
+        android:padding="4dp" >
+
+        <Button
+            android:id="@+id/btnDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#f8f9fe"
+            android:drawableLeft="@drawable/user"
+            android:gravity="center_horizontal|center_vertical" />
+
+        <Button
+            android:id="@+id/myLocation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#f8f9fe"
+            android:drawableRight="@drawable/mylocation"
+            android:gravity="center_horizontal|center_vertical"/>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#f8f9fe"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/logout" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/getlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/markerbutton"
+        android:layout_alignLeft="@+id/markerbutton"
+        android:layout_marginBottom="66dp"
+        android:textColor="@color/common_signin_btn_default_background"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
