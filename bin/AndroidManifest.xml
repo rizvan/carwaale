@@ -5,24 +5,27 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="19" />
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
     <!-- Allow to connect with internet -->
 
-    <uses-permission android:name="android.permission.INTERNET" />    
-        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
- 
+
     <!-- Required to show current location -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <uses-library android:name="com.google.android.maps" />
+
         <activity
             android:name="com.example.madsublocator.MainActivity"
             android:label="@string/app_name" >
@@ -39,48 +42,53 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-               <activity
-            android:label="@string/app_name"
-            android:name="com.example.madsublocator.DashboardActivity" >
-            <intent-filter >
+        <activity
+            android:name="com.example.madsublocator.DashboardActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
- 
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-         
-        <!--  Login Activity -->
+
+        <!-- Login Activity -->
         <activity
-            android:label="Login Account"
             android:name="com.example.madsublocator.LoginActivity"
-            android:windowSoftInputMode="stateVisible|adjustPan">
+            android:label="Login Account"
+            android:windowSoftInputMode="stateVisible|adjustPan" >
         </activity>
- 
-        <!--  Register Activity -->
+
+        <!-- Register Activity -->
         <activity
-            android:label="Register New Account"
             android:name="com.example.madsublocator.RegisterActivity"
-            android:windowSoftInputMode="stateVisible|adjustPan"></activity>
+            android:label="Register New Account"
+            android:windowSoftInputMode="stateVisible|adjustPan" >
+        </activity>
 
- 
         <!-- News Feed Activity -->
-        <activity android:name="com.example.madsublocator.NewsFeedActivity" ></activity>
- 
-        <!-- Friends Activity -->
-        <activity android:name="com.example.madsublocator.FriendsActivity" ></activity>
-        <activity android:name="com.example.madsublocator.UserDetails" ></activity>
-     <meta-data
-     android:name="com.google.android.maps.v2.API_KEY"
-     android:value="AIzaSyDXlVMafI2bxgv6mYxtpX2GjQi18yavj-w" />
- <meta-data
-        android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
-        
-        <uses-library android:name="com.google.android.maps"/>
- 
-    </application>
-     
+        <activity android:name="com.example.madsublocator.NewsFeedActivity" >
+        </activity>
 
-  
+        <!-- Friends Activity -->
+        <activity android:name="com.example.madsublocator.FriendsActivity" >
+        </activity>
+        <activity android:name="com.example.madsublocator.UserDetails" >
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAXqK404EYQyo3QB9uL4jqsirB8zk53T4o" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <uses-library android:name="com.google.android.maps" />
+
+        <activity
+            android:name="com.example.madsublocator.WaitForDriver"
+            android:label="@string/title_activity_wait_for_driver" >
+        </activity>
+    </application>
 
 </manifest>
