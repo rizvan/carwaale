@@ -539,14 +539,40 @@ googleMap.animateCamera(CameraUpdateFactory
 			   System.out.println("connect to website to send notification");
 			   
 			     // Add your data
-		       List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+		       List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
 		            nameValuePairs.add(new BasicNameValuePair("la", String.valueOf(myLat)));
 		            nameValuePairs.add(new BasicNameValuePair("lo", String.valueOf(myLng)));
-		          httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+		            nameValuePairs.add(new BasicNameValuePair("custNo", "1"));
+
+		            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 	        // Execute HTTP Post Request
 			   	        HttpResponse response = httpclient.execute(httppost);
 		      
 			   	     System.out.println("Done notifiying");
+		       HttpEntity entity = response.getEntity();
+	    	  InputStream is = entity.getContent();
+		    } catch (ClientProtocolException e) {
+		        // TODO Auto-generated catch block
+		    	System.out.println("catch1");
+		    } catch (IOException e) {
+		        // TODO Auto-generated catch block
+		    	System.out.println("catch2");
+		    }
+			 
+			 try {
+				 HttpClient httpclient = new DefaultHttpClient();
+			    HttpPost httppost = new HttpPost("http://kidiyoor.site88.net/resfeber/setRequest.php");
+			   System.out.println("connect to website to set status");
+			   
+			     // Add your data
+		       List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
+		            nameValuePairs.add(new BasicNameValuePair("sno", "1"));
+		           
+		          httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+	        // Execute HTTP Post Request
+			   	        HttpResponse response = httpclient.execute(httppost);
+		      
+			   	     System.out.println("set");
 		       HttpEntity entity = response.getEntity();
 	    	  InputStream is = entity.getContent();
 		    } catch (ClientProtocolException e) {

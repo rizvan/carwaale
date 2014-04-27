@@ -66,6 +66,18 @@
             android:text="Medium Text"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check for drivers" />
+
+        <TextView
+            android:id="@+id/d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DriverDetailsHere" />
+
     </LinearLayout>
 
 </RelativeLayout>

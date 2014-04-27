@@ -22,7 +22,6 @@
     <string name="madlogo">logo of mad</string>
     <string name="userdetails">User Details</string>
     <string name="currentLoc">my_loc</string>
-    
-    
+    <string name="title_activity_wait_for_driver">WaitForDriver</string>
 
 </resources>
